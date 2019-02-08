@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
+
 
 namespace Library.Api
 {
@@ -50,6 +52,11 @@ namespace Library.Api
             services.AddAutoMapper();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+           services.AddSwaggerGen(cfg =>cfg.SwaggerDoc("v1", new Info { Title = "Library API V1", Version = "v1" }));
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +67,15 @@ namespace Library.Api
                 app.UseDeveloperExceptionPage();
             }
 
+
             app.UseMvc();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Library API V1");
+                c.RoutePrefix = string.Empty;
+            });
         }
     }
 }

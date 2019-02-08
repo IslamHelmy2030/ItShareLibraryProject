@@ -13,5 +13,6 @@ namespace Library.Domain.Business.Interfaces
         Task<IList<IGenderDto>> GetAllGenders();
         Task<IGenderDto> GetGender(int genderId);
         Task<bool> UpdateGender(GenderDto genderDto);
+        Task<bool> DeleteGender(int id);
     }
 }

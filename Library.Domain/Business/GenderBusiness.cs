@@ -43,5 +43,11 @@ namespace Library.Domain.Business
             UnitOfWork.Repo.Update(gender);
             return await UnitOfWork.SaveChanges() > 0;
         }
+
+        public async Task<bool> DeleteGender(int id)
+        {
+            UnitOfWork.Repo.Remove(x=>x.Id == id);
+            return await UnitOfWork.SaveChanges() > 0;
+        }
     }
 }
