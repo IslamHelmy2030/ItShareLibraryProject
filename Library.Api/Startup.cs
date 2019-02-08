@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 using Library.Data.Context;
+using Library.Data.Entities;
+using Library.Domain.Business;
+using Library.Domain.Business.Interfaces;
+using Library.Domain.Dto;
+using Library.Domain.Dto.Interfaces;
+using Library.Repositories.Repository;
+using Library.Repositories.UnitOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace Library.Api
 {
@@ -34,6 +36,18 @@ namespace Library.Api
                     cfg.UseSqlServer(_configuration.GetConnectionString("LibraryConnection"));
                 });
 
+            services.AddScoped<DbContext, LibraryDbContext>();
+
+            services.AddTransient<IGenderBusiness, GenderBusiness>();
+            services.AddTransient<ILanguageBusiness, LanguageBusiness>();
+
+            services.AddTransient<IGenderDto, GenderDto>();
+            services.AddTransient<ILanguageDto, LanguageDto>();
+
+            services.AddTransient<IUnitOfWork<Gender>, UnitOfWork<Gender>>();
+            services.AddTransient<IRepository<Gender>, Repository<Gender>>();
+
+            services.AddAutoMapper();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

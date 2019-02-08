@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Library.Data.Entities;
+﻿using Library.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Library.Data.Context
@@ -10,7 +7,7 @@ namespace Library.Data.Context
     {
         public LibraryDbContext(DbContextOptions<LibraryDbContext> options) : base(options)
         {
-            
+
         }
 
         public DbSet<Author> Authors { get; set; }

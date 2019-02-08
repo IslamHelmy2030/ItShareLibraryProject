@@ -7,7 +7,7 @@ using Library.Domain.Business.Interfaces;
 
 namespace Library.Domain.Dto
 {
-    public class LanguageParameter : ILanguageParameter
+    public class LanguageParameter
     {
         public string LanguageName { get; set; }
     }

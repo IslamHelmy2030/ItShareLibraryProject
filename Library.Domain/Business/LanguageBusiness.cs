@@ -12,7 +12,7 @@ using Library.Repositories.UnitOfWork;
 
 namespace Library.Domain.Business
 {
-    public class LanguageBusiness : BusinessBase<Language>
+    public class LanguageBusiness : BusinessBase<Language>, ILanguageBusiness
     {
         public LanguageBusiness(IUnitOfWork<Language> unitOfWork, IMapper mapper) : base(unitOfWork, mapper)
         {
