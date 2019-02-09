@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Api", "Library.Api\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Repositories", "Library.Repositories\Library.Repositories.csproj", "{BC62E140-70C0-4F30-B8C6-7725971AD8BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Domain", "Library.Domain\Library.Domain.csproj", "{06D6A5DA-6BEB-4C25-874A-A67729E0967F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Library.Domain", "Library.Domain\Library.Domain.csproj", "{06D6A5DA-6BEB-4C25-874A-A67729E0967F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Portal", "Library.Portal\Library.Portal.csproj", "{BF0AE664-AAE9-45B9-BD24-DFEFDBF17FA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{06D6A5DA-6BEB-4C25-874A-A67729E0967F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06D6A5DA-6BEB-4C25-874A-A67729E0967F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06D6A5DA-6BEB-4C25-874A-A67729E0967F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF0AE664-AAE9-45B9-BD24-DFEFDBF17FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0AE664-AAE9-45B9-BD24-DFEFDBF17FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0AE664-AAE9-45B9-BD24-DFEFDBF17FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0AE664-AAE9-45B9-BD24-DFEFDBF17FA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
