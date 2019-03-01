@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 
 namespace Library.Domain.Mapping
 {
@@ -13,6 +8,7 @@ namespace Library.Domain.Mapping
         {
             GenderMapping();
             LanguageMapping();
+            AuthorMapping();
         }
     }
 }

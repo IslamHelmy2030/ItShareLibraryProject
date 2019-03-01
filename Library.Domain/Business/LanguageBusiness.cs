@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Library.Data.Entities;
@@ -50,12 +47,12 @@ namespace Library.Domain.Business
 
         public async Task<bool> DeleteLanguage(int languageId)
         {
-            UnitOfWork.Repo.Remove(x=>x.Id == languageId);
+            UnitOfWork.Repo.Remove(x => x.Id == languageId);
             bool isSaved = await UnitOfWork.SaveChanges() > 0;
             return isSaved;
         }
 
     }
 
-   
+
 }

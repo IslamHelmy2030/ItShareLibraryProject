@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Library.Data.Entities;
+﻿using Library.Data.Entities;
 using Library.Domain.Dto;
 using Library.Domain.Dto.Interfaces;
-using Library.Domain.Dto.Parameters;
 
 namespace Library.Domain.Mapping
 {
@@ -14,6 +8,10 @@ namespace Library.Domain.Mapping
     {
         private void LanguageMapping()
         {
+            CreateMap<LanguageDto, Language>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.LanguageId))
+                .ForMember(dest => dest.WrittenLanguage, opt => opt.MapFrom(src => src.LanguageName))
+                .ReverseMap();
             CreateMap<Language, ILanguageDto>()
                 .ForMember(dest => dest.LanguageId, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.LanguageName, opt => opt.MapFrom(src => src.WrittenLanguage))

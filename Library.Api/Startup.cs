@@ -40,12 +40,18 @@ namespace Library.Api
 
             services.AddScoped<DbContext, LibraryDbContext>();
 
-            services.AddTransient<IGenderBusiness, GenderBusiness>();
+            services.AddTransient<IAuthorBusiness, AuthorBusiness>();
+            services.AddTransient<IAuthorDto, AuthorDto>();
+            services.AddTransient<IUnitOfWork<Author>, UnitOfWork<Author>>();
+            services.AddTransient<IRepository<Author>, Repository<Author>>();
+
             services.AddTransient<ILanguageBusiness, LanguageBusiness>();
-
-            services.AddTransient<IGenderDto, GenderDto>();
             services.AddTransient<ILanguageDto, LanguageDto>();
+            services.AddTransient<IUnitOfWork<Language>, UnitOfWork<Language>>();
+            services.AddTransient<IRepository<Language>, Repository<Language>>();
 
+            services.AddTransient<IGenderBusiness, GenderBusiness>();
+            services.AddTransient<IGenderDto, GenderDto>();
             services.AddTransient<IUnitOfWork<Gender>, UnitOfWork<Gender>>();
             services.AddTransient<IRepository<Gender>, Repository<Gender>>();
 
@@ -74,7 +80,6 @@ namespace Library.Api
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Library API V1");
-                c.RoutePrefix = string.Empty;
             });
         }
     }

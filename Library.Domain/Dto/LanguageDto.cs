@@ -7,9 +7,8 @@ using Library.Domain.Dto.Interfaces;
 
 namespace Library.Domain.Dto
 {
-    public class LanguageDto : ILanguageDto
+    public class LanguageDto : LanguageParameter, ILanguageDto
     {
         public int LanguageId { get; set; }
-        public string LanguageName { get; set; }
     }
 }
