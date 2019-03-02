@@ -45,14 +45,17 @@ namespace Library.Portal
 
             services.AddScoped<DbContext, LibraryDbContext>();
 
-            services.AddTransient<IGenderBusiness, GenderBusiness>();
             services.AddTransient<ILanguageBusiness, LanguageBusiness>();
+            services.AddTransient<IUnitOfWork<Language>, UnitOfWork<Language>>();
+            services.AddTransient<IRepository<Language>, Repository<Language>>();
 
-            services.AddTransient<IGenderDto, GenderDto>();
-            services.AddTransient<ILanguageDto, LanguageDto>();
-
+            services.AddTransient<IGenderBusiness, GenderBusiness>();
             services.AddTransient<IUnitOfWork<Gender>, UnitOfWork<Gender>>();
             services.AddTransient<IRepository<Gender>, Repository<Gender>>();
+
+            services.AddTransient<IAuthorBusiness, AuthorBusiness>();
+            services.AddTransient<IUnitOfWork<Author>, UnitOfWork<Author>>();
+            services.AddTransient<IRepository<Author>, Repository<Author>>();
 
             services.AddAutoMapper();
 

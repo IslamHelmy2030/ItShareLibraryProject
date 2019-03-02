@@ -46,7 +46,7 @@ namespace Library.Portal.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            return View();
+            return View(gender);
         }
 
         [HttpGet]
@@ -67,7 +67,7 @@ namespace Library.Portal.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            return View();
+            return View(gender);
         }
 
         [HttpGet]
